@@ -1,5 +1,5 @@
 #include "ExamMain.h"
-//#include "equations.h"
+#include "EquationExam.h"
 //#include "files.h"
 
 
@@ -14,13 +14,15 @@ int main(void){
   fscanf(arch1, "%s", nombre);
     for(i=1;i<=50;i++)
     {fscanf(arch1, "%d,%f", &indice, &valor);
-     printf("%d%f\n",indice, valor);
+     //printf("%d%f\n",indice, valor);
     valorestabla[i]=valor;
     }
      for(i=1;i<=50;i++)
     {printf("%d,%f\n",i, valorestabla[i] );
     
     }
+  calculaVC(valorestabla[], &media, &mediana, &moda);
+  
     fclose(arch1);
     return 0;
 }
