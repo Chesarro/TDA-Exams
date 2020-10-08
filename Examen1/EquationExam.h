@@ -49,7 +49,7 @@
 */
 
 
-EXTERN void equations_fuerzas(double valorestabla[], double *media, double *mediana, double *moda);
+EXTERN void calculaVC(double valorestabla[], double *media, double *mediana, double *moda);
 
 
 
