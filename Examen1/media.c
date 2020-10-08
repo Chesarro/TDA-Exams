@@ -2,41 +2,13 @@
 //  media.h
 //
 //
-//  Created by David Perez on 28/09/2020.
+//  Created by David Perez on 08/10/2020.
 //
 
-#ifndef media_h
-#define media_h
-
-
-/*
- * System headers required by the following declarations
- * (the implementation will import its specific dependencies):
- */
 
 #include <stdio.h>
 #include <stdlib.h>
-/*
- * Application specific headers required by the following declarations
- * (the implementation will import its specific dependencies):
- */
-
-/* Constants declarations. */
-/* Set EXTERN macro: */
-
-#ifndef media_IMPORT
-#define EXTERN
-#else
-#define EXTERN extern
-#endif
-
-/* Types declarations. */
-
-/* Global variables declarations. */
-
-
-/* Function prototypes. */
-
+#include "media.h"
 
 /*
  *
@@ -52,7 +24,13 @@
 */
 
 
-EXTERN int media_media(int mun[], int cant);
+int media_media(int num[], int cant)
+{
+	int i, sum=0;
+for(i=0;i<cant; i++)
+	sum=sum+num[i];
+return (sum/cant);
+}
 /*
  *
  * La funcion media_mediana encuenta la mediana de los datos
@@ -69,7 +47,14 @@ EXTERN int media_media(int mun[], int cant);
 */
 
 
-EXTERN int media_mediana(int num[], int cant);
+int media_mediana(int num[], int cant)
+{
+
+	if(cant%2==1)
+return num[(cant/2)];
+else
+return ((num[cant/2] + num[(cant/2)-1])/2)
+}
 
 /*
  *
@@ -85,8 +70,44 @@ EXTERN int media_mediana(int num[], int cant);
 */
 
 
-EXTERN int media_moda(int num[], int cant);
+int media_moda(int num[], int cant)
+{
+int i, aux[cant][2];
+int auxcant=0;
+int j=0;
+int moda=0, nummoda=0;
+for(i=0;i<cant;i++)
+{
+	if(i==0)
+	{
+	aux[0][0]=num[i];
+	aux[0][1]=1;
+	auxcant++;
+	}
+	else
+	{
+		for(j=0;j<auxcant;j++)
+		{
+			if(num[i]==aux[j][0])
+			aux[j][1]++;
+		}
+		if(j==auxcant)
+		{
+			aux[auxcant][0]=num[i];
+			aux[auxcant][1]=1;
+			auxcant++;
+		}
+	}
 
-#undef media_IMPORT
-#undef EXTERN
-#endif /* media_h */
+}
+for(j=0;j<auxcant;j++)
+{
+if(aux[j][1]>=nummoda)
+{
+nummoda=aux[j][1];
+moda=aux[j][0];
+}
+}
+
+return moda;
+}
