@@ -28,6 +28,7 @@ EXTERN void cargar_datos(char nombre[], listdata **inicio, listdata **aux){
   int cont, t, i=0;
   float dat;
   char str[255], strf[100];
+  char c;
   FILE *fp;
   fp = fopen("data.csv", "r");
   listdata *nodo;
@@ -44,12 +45,25 @@ EXTERN void cargar_datos(char nombre[], listdata **inicio, listdata **aux){
     }
   else
     {
-      while(fgets(str, 255, fp) != NULL){
-	printf("\n%s", str);
-	scanf(str, "%d,%f", &cont, &dat);
-	printf("\n%d,%f", cont, dat);
-	      
-	/*if(*inicio == NULL){
+      while((c=getc(fp)) != EOF){
+
+	
+	    if(c == ',')
+	      t = 1;
+	    if(t == 1 && c != ','){
+	      strf[i]=c;
+	      i++;
+	    }
+	    if(c == '\n'){
+	      t=0;
+	      i=0;
+	    }
+	  
+	sscanf(strf, "%f", &dat);
+
+	nodo->numero = dat;
+	
+	if(*inicio == NULL){
 	    *inicio = nodo;
 	  }
 	  else{
@@ -59,10 +73,12 @@ EXTERN void cargar_datos(char nombre[], listdata **inicio, listdata **aux){
 	  *aux = nodo;
 	  nodo->sig=NULL;
 	  printf("\n--> %f", nodo->numero);
-	  fclose(fp);*/
+	  
       
       }
+      
     }
+  fclose(fp);
 }
 	
     
