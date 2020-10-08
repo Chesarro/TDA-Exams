@@ -12,11 +12,11 @@ int main(void){
     gets(nombre);
     arch1 = fopen(nombre,"rb");
     for(i=1;i<=50;i++)
-    {fscanf(arch1, "%d%f", &indice, &valor);
+    {fscanf(arch1, "%f", &valor);
     valorestabla[i]=valor;
     }
      for(i=1;i<=50;i++)
-    {printf("%f",valorestabla[i] );
+    {printf("%d%f\n",i, valorestabla[i] );
     
     }
     fclose(arch1);
