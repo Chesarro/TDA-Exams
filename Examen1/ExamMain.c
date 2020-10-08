@@ -6,7 +6,7 @@
 int main(void){
   char nombre[100];
   int indice,i;
-  float valor, valorestabla[100];
+  float valor, valorestabla[100], media, mediana, moda;
     FILE * arch1;
     printf("Dime el nombre del archivo\n");
     gets(nombre);
