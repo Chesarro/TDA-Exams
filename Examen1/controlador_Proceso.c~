@@ -1,0 +1,12 @@
+#include"TDA_Statistics.h"
+
+void controlador_Proceso(char * nombre_archivo)
+{
+  FILE * Archivo = NULL;
+
+  Archivo = modelo_Archivo(nombre_archivo,"r");
+
+  modelo_Lee_Archivo(Archivo);
+
+  fclose(Archivo);
+}
