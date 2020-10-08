@@ -21,7 +21,7 @@ int main(void){
     {printf("%d,%f\n",i, valorestabla[i] );
     
     }
-  calculaVC(&valorestabla, &media, &mediana, &moda);
+  calculaVC(valorestabla, &media, &mediana, &moda);
   
     fclose(arch1);
     return 0;
