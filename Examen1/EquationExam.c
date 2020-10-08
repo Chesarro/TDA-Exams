@@ -14,7 +14,7 @@
  *
  * @return double.
 */
-void calculaVC(float arreglo[], int MAX, float *media, float *mediana, float *moda)
+void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *moda)
 {
   float suma=0;
   int i;
