@@ -50,7 +50,7 @@
 
 
 EXTERN void calculaVC(float *valorestabla, int MAX, float *media, float *mediana, float *moda);
-
+EXTERN void calculaVD(float *valorestabla,int MAX, float mediana, float *desviacion);
 
 
 #undef equations_IMPORT
