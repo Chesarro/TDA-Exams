@@ -35,11 +35,11 @@ int main(void) {
     file = new_file("data_statistic.csv", "w");
 
     mean = calculate_mean(array, data_number);
-    fprintf(file, "%.3f\n", mean);
+    fprintf(file, "Mean: %.3f\n", mean);
     median = calculate_median(array, data_number);
-    fprintf(file, "%.3f\n", median);
+    fprintf(file, "Median: %.3f\n", median);
     mode = calculate_mode(array, data_number);
-    fprintf(file, "%.3f\n", mode);
+    fprintf(file, "Mode: %.3f\n", mode);
 
     fclose(file);
 
