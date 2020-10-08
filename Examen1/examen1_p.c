@@ -19,4 +19,9 @@ int main(void)
   printf("Por favor inserte el nombre de su Data Flie:");
   gets(archivo);
   cargar_datos(archivo, &inicio,&aux);
+
+  
+  
+  //liberar memoria
+  liberar(inicio);
 }
