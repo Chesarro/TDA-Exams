@@ -36,7 +36,7 @@ void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *mod
     } 
   } 
    for(i=0;i<=MAX;i++)
-      printf("%f", arreglo[i]);
+      printf("%f\n", arreglo[i]);
 
      
   
