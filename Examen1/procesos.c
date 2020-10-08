@@ -12,11 +12,8 @@
 float median(float array[]){
     float res;
     res = ((array[24] + array[23])/2);
-    
-    
-    
     return res;
-}
+}//end median
 
 int mode(float array[]){
     int res,cont,x,max;
@@ -33,19 +30,19 @@ int mode(float array[]){
         }//end if
     }//end for (cont)
     return res;
-}
+}//end mode
 
 float mean(float array[]){
     float res;
     int cont;
     for(cont = 0; cont < 50; cont ++){
         res += array[cont];
-    }
+    }//end for
     res /= 50;
     
     
     return res;
-}
+}//end mean
 
 float stdev(float array[], float mean){
     float res;
@@ -57,7 +54,7 @@ float stdev(float array[], float mean){
     res /= 50;
     
     return res;
-}
+}//end stdev
 
 float range(float array[]){
     float res;
@@ -65,13 +62,13 @@ float range(float array[]){
     res = array[49] - array[0];
     
     return res;
-}
+}//end range
 
 float IQR(float array[]){
     float res, Q1, Q3;
-    Q1 = (array[10]+array[11])/2;
-    Q3 = (array[36]+array[37])/2;
+    Q1 = (array[10]+array[11])/2; //calcular Q1
+    Q3 = (array[36]+array[37])/2; //calcular Q3
     res = Q3 - Q1;
     
     return res;
-}
+}//end IQR

@@ -17,14 +17,6 @@
     #define EXTERN extern
 #endif
 
-/*
- * @function
- *
- * @params
- *
- * @return
- *
- */
 
 
 #endif /* main_h */
