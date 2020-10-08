@@ -2,7 +2,7 @@
 #include "EquationExam.h"
 //#include "files.h"
 
-
+int MAX;
 int main(void){
   char nombre[100];
   int indice,i;
@@ -12,12 +12,13 @@ int main(void){
     gets(nombre);
     arch1 = fopen(nombre,"r");
   fscanf(arch1, "%s", nombre);
-    for(i=1;i<=50;i++)
+  MAX=50;
+    for(i=1;i<=MAX;i++)
     {fscanf(arch1, "%d,%f", &indice, &valor);
      //printf("%d%f\n",indice, valor);
     valorestabla[i]=valor;
     }
-     for(i=1;i<=50;i++)
+     for(i=1;i<=MAX;i++)
     {printf("%d,%f\n",i, valorestabla[i] );
     
     }
