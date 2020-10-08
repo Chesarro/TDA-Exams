@@ -16,30 +16,32 @@
 
 int main(void) {
     char c;
-    float array[50];
+    float *array;
     int data_number = 0, index = 0;
     float mean, median, mode, data_value;
-    FILE *record = NULL;
+    FILE *file = NULL;
 
     system("clear");
     puts("\t\t\tSTATISTIC DESCRIPTIVE SOFTWARE\n");
 
-    record = new_file("data.csv", "r");
+    file = new_file("data.csv", "r");
     for(index = 0; index < 50; index++) {
-        fscanf(record, "%d %c %f", &data_number, &c, &data_value);
+        fscanf(file, "%d %c %f", &data_number, &c, &data_value);
         array[index] = data_value;
         printf("Value %d: %.3f\n", index, array[index]);
     }
-    fclose(record);
+    fclose(file);
+
+    file = new_file("data_statistic.csv", "w");
 
     mean = calculate_mean(array, data_number);
-    printf("\nMean: %.3f\n", mean);
-
+    fprintf(file, "%.3f\n", mean);
     median = calculate_median(array, data_number);
-    printf("Median: %.3f\n", median);
-
+    fprintf(file, "%.3f\n", median);
     mode = calculate_mode(array, data_number);
-    printf("Mode: %.3f\n", mode);
+    fprintf(file, "%.3f\n", mode);
+
+    fclose(file);
 
     return 0;
 }
