@@ -2,7 +2,7 @@
 //  files.h
 //
 //
-//  Created by David Perez on 28/09/2020.
+//  Created by David Perez on 08/10/2020.
 //
 
 #ifndef files_h
@@ -25,7 +25,7 @@
 
 /* Set EXTERN macro: */
 
-#ifndef equations_IMPORT
+#ifndef files_IMPORT
 #define EXTERN
 #else
 #define EXTERN extern
@@ -51,7 +51,7 @@
  *    cant (int*):
  *  cantidad leida de datos
  * @returns
-  void
+ *  void
 */
 
 
@@ -62,14 +62,18 @@ EXTERN void files_leer(char name[], int num[], int *cant);
  *
  * @params
  *
- *    Dt(double);
- *   diferencial del tiempo
+ *    media(int);
+ *   media calculada
+ *    mediana (int);
+ *   mediana calculada
+ *    moda(int);
+ *   moda calculada
  * @returns
- int.
+ *  void.
 */
 
 
-EXTERN void files_meterdata(double Dt);
+EXTERN void files_meterdata(int media, int mediana, int moda);
 
 /*
  *
@@ -85,7 +89,7 @@ EXTERN void files_meterdata(double Dt);
 */
 
 
-EXTERN files_meterhisto(int num[100][2], int cant);
+EXTERN void files_meterhisto(int num[100][2], int cant);
 
 #undef files_IMPORT
 #undef EXTERN
