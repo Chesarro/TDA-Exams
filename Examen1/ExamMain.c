@@ -15,7 +15,7 @@ int main(void){
   MAX=49;
     for(i=0;i<=MAX;i++)
     {fscanf(arch1, "%d,%f", &indice, &valor);
-     //printf("%d%f\n",indice, valor);
+     printf("%d%f\n",indice, valor);
     valorestabla[i]=valor;
     }
      for(i=0;i<=MAX;i++)
