@@ -149,8 +149,21 @@ void printValues(DATOS *datos)
 void fillFile(float array[],DATOS *datos)
 {
     int i;
-
+    float suma,prom;
+    int cant;
+    suma=0;
+    prom=0;
+    cant=datos->cant/10;
     FILE *file;
+    for(i=0;i<datos->cant;i++)
+    {
+        if(i%cant==0)
+        {
+            prom=suma/cant;
+            suma=0;
+        }
+        suma=array[i];
+    }
     file=fopen("data_statistic.csv","w");
     for(i=0;i<datos->cant;i++)
     {
