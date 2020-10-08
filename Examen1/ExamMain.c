@@ -10,9 +10,9 @@ int main(void){
     FILE * arch1;
     printf("Dime el nombre del archivo\n");
     gets(nombre);
-    arch1 = fopen(nombre,"rb");
+    arch1 = fopen(nombre,"r");
     for(i=1;i<=50;i++)
-    {fscanf(arch1, "%f", &valor);
+    {fscanf(arch1, "%d,%f", &indice, &valor);
     valorestabla[i]=valor;
     }
      for(i=1;i<=50;i++)
