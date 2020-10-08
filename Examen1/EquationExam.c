@@ -23,9 +23,9 @@ void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *mod
   *mediana=suma/MAX;
   printf("%f", *mediana);
   
-   for (i = 0; i < (MAX - 1); i++) 
+   for (i = 0; i <= MAX; i++) 
   { 
-    for (j = i + 1; j < MAX; j++) 
+    for (j = i + 1; j <= MAX; j++) 
     { 
       if (arreglo[j] < arreglo[i]) 
       { 
