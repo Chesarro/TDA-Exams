@@ -5,14 +5,14 @@
 
 int main(void){
   char nombre[100];
-  int indice;
+  int indice,i;
   float valor, valorestabla[100];
     FILE * arch1;
     printf("Dime el nombre del archivo\n");
-    get(nombre);
+    gets(nombre);
     arch1 = fopen(nombre,"rb");
     for(i=1;i<=50;i++)
-    {fscanf("%d%f", indice, valor);
+    {fscanf(arch1, "%d%f", indice, valor);
     valorestabla[i]=valor;
     }
      for(i=1;i<=50;i++)
