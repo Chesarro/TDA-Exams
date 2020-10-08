@@ -6,7 +6,7 @@ int MAX;
 int main(void){
   char nombre[100];
   int indice,i;
-  float valor, valorestabla[100], media, mediana, moda;
+  float valor, valorestabla[100], media, mediana, moda, desviacion;
     FILE * arch1;
     printf("Dime el nombre del archivo\n");
     gets(nombre);
@@ -23,6 +23,7 @@ int main(void){
     
     }
   calculaVC(valorestabla, MAX, &media, &mediana, &moda);
+   calculaVD(valorestabla, MAX, mediana, &desviacion);
   
     fclose(arch1);
     return 0;
