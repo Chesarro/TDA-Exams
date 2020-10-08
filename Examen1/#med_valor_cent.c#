@@ -133,6 +133,7 @@ EXTERN void liberar(listdata *inicio){
 
 
 EXTERN float media(listdata *inicio){
+  
 
 }
 

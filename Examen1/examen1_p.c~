@@ -13,10 +13,8 @@
 int main(void)
 {
   listdata *inicio, *aux;
-  char archivo[60];
   inicio= NULL;
   printf("\n\t---> BIENVENIDO <---\n\n");
   printf("Por favor inserte el nombre de su Data Flie:");
-  gets(archivo);
-  cargar_datos(archivo, &inicio,&aux);
+  cargar_datos("data.csv", &inicio,&aux);
 }
