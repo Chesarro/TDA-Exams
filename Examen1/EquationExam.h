@@ -49,7 +49,7 @@
 */
 
 
-EXTERN void calculaVC(double valorestabla[], double *media, double *mediana, double *moda);
+EXTERN void calculaVC(float valorestabla[], float *media, float *mediana, float *moda);
 
 
 
