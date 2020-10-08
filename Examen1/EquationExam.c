@@ -16,11 +16,25 @@
 */
 void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *moda)
 {
-  float suma=0;
+  float suma=0, temp;
   int i;
   for(i=0;i<=MAX;i++)
     suma=suma+arreglo[i];
-  *media=suma/MAX;
-  printf("%f", *media);
+  *mediana=suma/MAX;
+  printf("%f", *mediana);
+  
+   for (i = 0; i < (MAX - 1); i++) 
+  { 
+    for (j = i + 1; j < MAX; j++) 
+    { 
+      if (arreglo[j] < arreglo[i]) 
+      { 
+        temp = arreglo[j]; 
+        arreglo[j] = arreglo[i]; 
+        arreglo[i] = temp; 
+      } 
+    } 
+  } 
+  
 }
 
