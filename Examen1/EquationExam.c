@@ -39,10 +39,18 @@ void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *mod
       printf("%f\n", arreglo[i]);
 
  if((MAX+1)%2==0)
+ {*media=arreglo[MAX/2];
    printf("%f\n", arreglo[MAX/2]);
+ }
   else
+  { *media= (arreglo[MAX/2]+arreglo[MAX/2+1])/2;
      printf("%f\n", (arreglo[MAX/2]+arreglo[MAX/2+1])/2);
+  }
      
+  
+}
+void calculaVD(float *valorestabla,int MAX, float mediana, float *desviacion)
+{
   
 }
 
