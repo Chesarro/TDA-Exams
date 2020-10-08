@@ -14,7 +14,7 @@
  *
  * @return double.
 */
-void calculaVC(double arreglo[], double *media, double *mediana, double *moda)
+void calculaVC(float arreglo[], float *media, float *mediana, float *moda)
 {
   
 }
