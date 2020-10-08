@@ -11,6 +11,7 @@ int main(void){
     printf("Dime el nombre del archivo\n");
     gets(nombre);
     arch1 = fopen(nombre,"r");
+  fscanf(arch1, "%s", nombre);
     for(i=1;i<=50;i++)
     {fscanf(arch1, "%d,%lf", &indice, &valor);
      printf("%d%f\n",indice, valor);
