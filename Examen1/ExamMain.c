@@ -27,7 +27,7 @@ int main(void){
    
     fclose(arch1);
     arch2 = fopen("resultados","w");
-  fprintf(arch2, "Media = %f\nMediana = %f\nDesviacion = %f\nDistancia = %f\nRango=%f",media, mediana, desviacion, distancia, distancia);
+  fprintf(arch2, "Media = %f\nMediana = %f\nDesviacion = %f\nDistancia = %f\nRango=(%f,%f)",media, mediana, desviacion, distancia,valorestabla[0],valorestabla[MAX]);
   fclose(arch2);
   return 0;
 }
