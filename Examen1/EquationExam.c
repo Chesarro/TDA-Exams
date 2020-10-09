@@ -4,20 +4,22 @@
 #include <math.h>
 
 /**
- * Obtiene el resultado de la ecuacion de las fuerzas del sistema.
+ * Obtiene el resultado de las medidas de valor central.
  * @param
- *  masa (double):
- *      La masa del usuario en Kg. 
- *  Dt (double ):
- *      nuestra constante de cambio
- *  k (double):
- *      la constante de nuestro bungee
+ *  arreglo (float):
+ *      El arreglo con nuestros datos. 
+ *  MAX (float):
+ *      El numero de nuestros datos
+ *  media (float):
+ *      Valor medio de nuestro arreglo
+ *  mediana (float):
+ *      Valor promedio de nuestro arreglo
  *
  * @return double.
 */
 void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *moda)
 {
-  float suma=0, temp;
+  float suma=0, temp, modatemp[2][MAX]=NULL;
   int i,j;
   for(i=0;i<=MAX;i++)
     suma=suma+arreglo[i];
@@ -37,8 +39,17 @@ void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *mod
     } 
   } 
    for(i=0;i<=MAX;i++)
-      printf("%f\n", arreglo[i]);
-
+   {for(j=0;j<=MAX;j++)
+   {if(arreglo[i]!=modatemp[1][j])
+     {modatemp[1][i]=arreglo[i];
+     }
+    else
+      modatemp[2][i]=modatemp[2][i]+1;
+    printf("%f, %d\n", modatemp[1][i],modatemp[2][i]);
+   }
+   
+     printf("%f\n", arreglo[i]);
+   }
  if((MAX+1)%2==0)
  {*media=arreglo[MAX/2];
    printf("%f\n", arreglo[MAX/2]);
