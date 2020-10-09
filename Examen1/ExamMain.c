@@ -13,7 +13,7 @@ int main(void){
     arch1 = fopen(nombre,"r");
   fscanf(arch1, "%s", nombre);
   printf("Dime el numero de tus datos\n");
-  fscanf("%d",&MAX); 
+  scanf("%d",&MAX); 
   
 //  MAX=49;
   *valorestabla=(float*)malloc(sizeof(float)*MAX);
