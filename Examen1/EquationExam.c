@@ -50,12 +50,13 @@ void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *mod
      
   
 }
-void calculaVD(float *valorestabla,int MAX, float mediana, float *desviacion)
-{ float= sumatoria=0;
+void calculaVD(float *arreglo,int MAX, float mediana, float *desviacion)
+{ float sumatoria=0;
+ int i;
   for(i=0;i<=MAX;i++)
-  sumatoria=sumatoria+(arreglo[i]-media)*(arreglo[i]-media);
+  sumatoria=sumatoria+(arreglo[i]-mediana)*(arreglo[i]-mediana);
   
- desviasion=square.root(sumatoria/MAX);
-  printf("%f\n", desviasion);
+ *desviasion=square.root(sumatoria/MAX);
+  printf("%f\n", *desviasion);
 }
 
