@@ -7,7 +7,7 @@ int main(void){
   char nombre[100];
   int indice,i;
   float valor, valorestabla[100], media, mediana, moda, desviacion, distancia;
-    FILE * arch1;
+    FILE * arch1, *arch2;
     printf("Dime el nombre del archivo\n");
     gets(nombre);
     arch1 = fopen(nombre,"r");
