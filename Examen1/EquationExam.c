@@ -22,8 +22,8 @@ void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *mod
   float suma=0, temp, modatemp[2][MAX];
   int i,j;
   
-  for (i=0; i<3; i++)
- for (j=0; j<4; j++)
+  for (i=0; i<2; i++)
+ for (j=0; j<MAX; j++)
  modatemp[i][j] = 0;
   
   for(i=0;i<=MAX;i++)
