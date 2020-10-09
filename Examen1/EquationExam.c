@@ -19,7 +19,7 @@
 */
 void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *moda)
 {
-  float suma=0, temp, modatemp[2][MAX];
+  float suma=0, temp, modatemp[1][MAX];
   int i,j;
   
   for (i=0; i<2; i++)
@@ -46,13 +46,13 @@ void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *mod
    for(i=0;i<MAX;i++)
      {for(j=0;j<MAX;j++)
        {
-          if(arreglo[i]!=modatemp[1][j])
-           {modatemp[1][i]=arreglo[i];
+          if(arreglo[i]!=modatemp[0][j])
+           {modatemp[0][i]=arreglo[i];
            }
           else
-            modatemp[2][i]=modatemp[2][i]+1;
+            modatemp[1][i]=modatemp[1][i]+1;
        }
-        printf("%f, %f\n", modatemp[1][i],modatemp[2][i]);
+        printf("%f, %f\n", modatemp[0][i],modatemp[1][i]);
         //printf("%f\n", arreglo[i]);
      }
  if((MAX+1)%2==0)
