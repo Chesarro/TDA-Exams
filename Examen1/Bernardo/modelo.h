@@ -37,6 +37,23 @@
 
 /* Function prototypes. */
 
+EXTERN void ordenar(float *arreglo, int size);
+
+EXTERN float media(float *arreglo, int size);
+
+EXTERN float mediana(float *arreglo, int size);
+
+EXTERN float moda(float *arreglo, int size);
+
+EXTERN float desviacion(float *arreglo, float media, int size);
+
+EXTERN float minimo(float *arreglo, int size);
+
+EXTERN float maximo(float *arreglo, int size);
+
+EXTERN float distancia(float *arreglo, int size);
+
+EXTERN void cast(float*arreglo, int size);
 /*
  *
  *

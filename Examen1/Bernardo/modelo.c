@@ -8,58 +8,46 @@
 #include "modelo.h"
 #include <math.h>
 
-void ordenar(float *arreglo);
-float media(float *arreglo);
-float mediana(float *arreglo);
-float moda(float *arreglo);
-
-void modelo(){
-}
-
-void ordenar(float *arreglo){
+void ordenar(float *arreglo, int size){
   float extra=0;
-  for(int i=0; i<sizeof(arreglo); i++){
-    for(int j=i+1; j<sizeof(arreglo); j++){
+  for(int i=0; i<size; i++){
+    for(int j=i+1; j<size; j++){
       if(arreglo[i]>arreglo[j]){
         extra=arreglo[j];
         arreglo[j]=arreglo[i];
-        arreglo[i]=arreglo[j];
+        arreglo[i]=extra;
       }
     }
   }
 }
 
-void modeloMedidasValorCentral(float *arreglo){
-  media(arreglo);
-}
-
-float media(float *arreglo){
+float media(float *arreglo, int size){
   float Sum=0;
-  for(int i=0; i<sizeof(arreglo); i++){
+  for(int i=0; i<size; i++){
     Sum=Sum+arreglo[i];
   }
-  return Sum=Sum/sizeof(arreglo);
+  return Sum=Sum/size;
 }
 
-float mediana(float *arreglo){
+float mediana(float *arreglo, int size){
   int mediana;
-  mediana=sizeof(arreglo)/2;
-  if(mediana%2==0){
-    return mediana;
+  mediana=size;
+  mediana=mediana/2;
+  if(size%2==0){
+    return arreglo[mediana];
   }
   else{
-    mediana=((int)(mediana)+(int)(mediana)+1)/2;
-    return mediana;
+    return (arreglo[mediana]+arreglo[mediana+1])/2;
   }
 }
 
-float moda(float *arreglo){
+float moda(float *arreglo, int size){
   int contador=0;
   int max=0;
   float moda=0;
-  for(int i=0; i<sizeof(arreglo); i++){
+  for(int i=0; i<size; i++){
     contador=0;
-    for(int j=0; j<sizeof(arreglo); j++){
+    for(int j=0; j<size; j++){
       if(arreglo[i]==arreglo[contador]){
         contador=contador+1;
       }
@@ -71,18 +59,18 @@ float moda(float *arreglo){
   return moda;
 }
 
-float desviacion(float *arreglo, float media){
+float desviacion(float *arreglo, float media, int size){
   float Sum=0;
-  for(int i=0; i<sizeof(arreglo); i++){
+  for(int i=0; i<size; i++){
     Sum=Sum+(pow(arreglo[i]-media,2));
   }
-  Sum=Sum/sizeof(arreglo);
+  Sum=Sum/size;
   return sqrt(Sum);
 }
 
-float minimo(float *arreglo){
+float minimo(float *arreglo, int size){
   float Minimo=99999;
-  for(int i=0; i<sizeof(arreglo); i++){
+  for(int i=0; i<size; i++){
     if(arreglo[i]<Minimo){
       Minimo=arreglo[i];
     }
@@ -90,9 +78,9 @@ float minimo(float *arreglo){
   return Minimo;
 }
 
-float maximo(float *arreglo){
+float maximo(float *arreglo, int size){
   float Maximo=0;
-  for(int i=0; i<sizeof(arreglo); i++){
+  for(int i=0; i<size; i++){
     if(arreglo[i]>Maximo){
       Maximo=arreglo[i];
     }
@@ -100,9 +88,15 @@ float maximo(float *arreglo){
   return Maximo;
 }
 
-float distancia(float *arreglo){
-  int A=(int)sizeof(arreglo)*0.95;
-  int B=(int)sizeof(arreglo)*0.25;
+float distancia(float *arreglo, int size){
+  int A=(int)size*0.95;
+  int B=(int)size*0.25;
   float distancia=arreglo[A]-arreglo[B];
   return distancia;
+}
+
+void cast(float *arreglo, int size){
+  for(int i=0; i<size; i++){
+    arreglo[i]=(int)arreglo[i];
+  }
 }

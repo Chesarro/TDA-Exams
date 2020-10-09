@@ -69,6 +69,11 @@ EXTERN void pipesCloseFile(FILE *data);
 void pipesWriteFile(int rows, float RespuestaResorte[], float TiempoDiscreto[], FILE * fpointer);
 
 /*
+* La función pipesNewFile escribe nuevo archivo
+*/
+EXTERN FILE* pipesWriteNewFile(char *archivo);
+
+/*
 * La función openGnuPlot  se encarga de retornar un pipepointer que tenga una conexión establecida con GNUPlot.
 *
 *
@@ -79,7 +84,7 @@ void pipesWriteFile(int rows, float RespuestaResorte[], float TiempoDiscreto[], 
        FILE * gnupointer
 
 */
-EXTERN void pipesOpenGnuPlot();
+EXTERN FILE * pipesOpenGnuPlot();
 
 /*
 * La función pipesGraphGnuPlot se encarga de graficar en GNUPlot los datos que tenga en un archivo.
@@ -93,6 +98,7 @@ EXTERN void pipesOpenGnuPlot();
 */
 EXTERN void pipesGraphGnuPlot(FILE * gnupointer, char NombreArch[]);
 
+EXTERN void pipesWritePlot(FILE *especial, float *arreglo, int size);
 /*
 * La función pipesObtenerValores se encarga de recibir de un archivo los datos y guardarlos en arreglo
 *
@@ -103,6 +109,8 @@ EXTERN void pipesGraphGnuPlot(FILE * gnupointer, char NombreArch[]);
 * @returns
 */
 EXTERN void pipesObtenerValores(float *arreglo, FILE *archivo);
+
+EXTERN void pipesWrite(FILE *archivo, float media, float moda, float mediana, float desviacion, float minimo, float maximo, float distancia);
 #undef pipes_IMPORT
 #undef EXTERN
 #endif

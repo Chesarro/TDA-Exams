@@ -15,7 +15,7 @@ void vista_archivo(char *archivo){
 }
 
 void vista_error(){
-  printf("\nINVALIDO. Presiona enter para volver a intentar: ");
+  printf("\nINVALIDO. Tu archivo se tiene que llamar data.csv :(\nPresiona enter para volver a intentar: ");
   getchar();
   fpurge(stdin);
 }

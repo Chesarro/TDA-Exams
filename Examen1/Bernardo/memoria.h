@@ -36,7 +36,7 @@
 
 
 /* Function prototypes. */
-EXTERN float *memoriaNuevoMalloc(FILE* data);
+EXTERN float *memoriaNuevoMalloc(FILE* data, int *size);
 
 #undef memoria_IMPORT
 #undef EXTERN
