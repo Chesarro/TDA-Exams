@@ -72,7 +72,7 @@ void calculaVD(float *arreglo,int MAX, float mediana, float *desviacion, float *
  q3=q3/2;
  q1=q1/2;
  *distancia=q3-q1;
- printf("%f,%f,%f\n", q1,q2, *distancia);
+ printf("%f,%f,%f\n", q1,q3, *distancia);
  
 }
 
