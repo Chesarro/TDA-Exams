@@ -24,7 +24,10 @@ int main(void){
     }
   calculaVC(valorestabla, MAX, &media, &mediana, &moda);
    calculaVD(valorestabla, MAX, mediana, &desviacion, &distancia);
-  
+   
     fclose(arch1);
-    return 0;
+    arch2 = fopen("resultados","w");
+  fprintf(arch2, "Media = %f\nMediana = %f\nDesviacion = %f\nDistancia = %f\nRango=%f",media, mediana, desviacion, distancia, distancia);
+  fclose(arch2);
+  return 0;
 }
