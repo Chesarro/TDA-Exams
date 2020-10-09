@@ -56,11 +56,11 @@ void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *mod
         //printf("%f\n", arreglo[i]);
      }
   for(i=0;i<MAX;i++)
-   if( modatemp[1][i]>masgrande)
+  {if( modatemp[1][i]>masgrande)
      masgrande=modatemp[1][i];
-  for(i=0;i<MAX;i++)
    if( modatemp[1][i]==masgrande)
      apuntador=i;
+  }
   printf("apuntador %d\n",apuntador);
  if((MAX+1)%2==0)
  {*media=arreglo[MAX/2];
