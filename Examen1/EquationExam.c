@@ -54,9 +54,9 @@ void calculaVD(float *arreglo,int MAX, float mediana, float *desviacion)
 { float sumatoria=0;
  int k;
  for(k=0;k<MAX;k++)
- // sumatoria=sumatoria+(arreglo[i]-mediana)*(arreglo[i]-mediana);
+ sumatoria=sumatoria+(arreglo[k]-mediana)*(arreglo[k]-mediana);
   printf("aqui si\n");
- //*desviacion=sqrt(sumatoria/MAX);
-//  printf("%f\n", *desviacion);
+ *desviacion=sqrt(sumatoria/MAX);
+ printf("%f\n", *desviacion);
 }
 
