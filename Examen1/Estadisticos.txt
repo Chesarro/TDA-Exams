@@ -1,0 +1,7 @@
+Media: 4.955432
+Mediana: 5.031065
+Moda: 4.162632
+Desviacion Estandar: 0.280655
+Minimo: 4.162632
+Maximo: 5.636707
+Distancia Intercuartil: 0.554859
