@@ -60,11 +60,11 @@ void calculaVD(float *arreglo,int MAX, float mediana, float *desviacion, float *
  printf("%f\n", *desviacion);
  
  //calculamos cuartil1 y cuartil3
- posicionq1=(MAX)(1/4);
- posicionq3=(MAX)(3/4);
+ posicionq1=(MAX)*(1/4);
+ posicionq3=(MAX)*(3/4);
  for(k=0;k<=MAX;k++)
    if(k==posicionq1||k==posicionq1+1)
-     q1=qi+arreglo[k];
+     q1=q1+arreglo[k];
  else
    if(k==posicionq3||k==posicionq3+1)
           q3=q3+arreglo[k];
