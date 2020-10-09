@@ -1,6 +1,7 @@
 #include "EquationExam.h"
 #include "ExamMain.h"
 #include "files.h"
+#include <math.h>
 
 /**
  * Obtiene el resultado de la ecuacion de las fuerzas del sistema.
@@ -50,7 +51,11 @@ void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *mod
   
 }
 void calculaVD(float *valorestabla,int MAX, float mediana, float *desviacion)
-{
+{ float= sumatoria=0;
+  for(i=0;i<=MAX;i++)
+  sumatoria=sumatoria+(arreglo[i]-media)*(arreglo[i]-media);
   
+ desviasion=square.root(sumatoria/MAX);
+  printf("%f\n", desviasion);
 }
 
