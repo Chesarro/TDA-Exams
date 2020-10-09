@@ -63,12 +63,12 @@ void calculaVD(float *arreglo,int MAX, float mediana, float *desviacion, float *
  posicionq1=(MAX)*(1/4);
  posicionq3=(MAX)*(3/4);
  for(k=0;k<=MAX;k++)
-   if(k==posicionq1||k==posicionq1+1)
-     q1=q1+arreglo[k];
+ { if(k==posicionq1||k==posicionq1+1)
+ {q1=q1+arreglo[k];}
  else
-   if(k==posicionq3||k==posicionq3+1)
-          q3=q3+arreglo[k];
-
+ {if(k==posicionq3||k==posicionq3+1)
+          q3=q3+arreglo[k];}
+ }
  q3=q3/2;
  q1=q1/2;
  *distancia=q3-q1;
