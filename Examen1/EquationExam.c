@@ -50,13 +50,28 @@ void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *mod
      
   
 }
-void calculaVD(float *arreglo,int MAX, float mediana, float *desviacion)
-{ float sumatoria=0;
- int k;
+void calculaVD(float *arreglo,int MAX, float mediana, float *desviacion, float *distancia)
+{ float sumatoria=0, q1=0, q3=0;
+ int k, posicionq1, posicionq3;
  for(k=0;k<MAX;k++)
  sumatoria=sumatoria+(arreglo[k]-mediana)*(arreglo[k]-mediana);
   printf("aqui si\n");
  *desviacion=sqrt(sumatoria/MAX);
  printf("%f\n", *desviacion);
+ 
+ //calculamos cuartil1 y cuartil3
+ posicionq1=(MAX)(1/4);
+ posicionq3=(MAX)(3/4);
+ for(k=0;k<=MAX;k++)
+   if(k==posicionq1||k==posicionq1+1)
+     q1=qi+arreglo[k];
+ else
+   if(k==posicionq3||k==posicionq3+1)
+          q3=q3+arreglo[k];
+
+ q3=q3/2;
+ q1=q1/2;
+ *distancia=q3-q1;
+ 
 }
 
