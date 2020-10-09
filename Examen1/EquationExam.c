@@ -19,7 +19,7 @@
 */
 void calculaVC(float *arreglo, int MAX, float *media, float *mediana, float *moda)
 {
-  float suma=0, temp, modatemp[1][MAX];
+  float suma=0, temp, modatemp[2][MAX];
   int i,j;
   
   for (i=0; i<2; i++)
