@@ -16,7 +16,7 @@ int main(void){
   scanf("%d",&MAX); 
   
 //  MAX=49;
-  *valorestabla=(float)malloc(sizeof(float*)*MAX);
+  *valorestabla=(float*)malloc(sizeof(float*)*MAX);
     for(i=0;i<=MAX;i++)
     {fscanf(arch1, "%d,%f", &indice, &valor);
      //printf("%d%f\n",indice, valor);
