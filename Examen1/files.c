@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "files.h"
 
 void files_leer(char name[], int num[], int *cant)
 {
-FILE *archivo;
+FILE *archivo=NULL;
+char linea[50];
+
 int i=0,aux;
 archivo=fopen(name, "rt");
 
 while(!feof(archivo))
 {
-fscanf(archivo, "%d,%d\n",&aux, &num[i]);
+fgets(linea, 50, archivo);
+sscanf(linea, "%d,%d",&aux, &num[i]);
 if(feof(archivo))
 break;
 i++;
@@ -36,9 +40,9 @@ void files_meterdata(int media, int mediana, int moda)
 FILE *archivo;
 archivo=fopen("Data_Statistic.csv", "wt");
 
-fprintf(archivo, "Media:\n\t%d", media);
-fprintf(archivo, "Mediana:\n\t%d", mediana);
-fprintf(archivo, "Moda:\n\t%d", moda);
+fprintf(archivo, "Media:\n\t%d\n", media);
+fprintf(archivo, "Mediana:\n\t%d\n", mediana);
+fprintf(archivo, "Moda:\n\t%d\n", moda);
 
 fclose(archivo);
 
