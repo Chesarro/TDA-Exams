@@ -18,6 +18,7 @@
 /* funciones.h -- Function prototypes */
 
 EXTERN int readFile(float array[]);
+EXTERN int llenarArray(float array[]);
 EXTERN void orderArray(float *a,int n);
 EXTERN void calculate(DATOS *datos,float array[]);
 EXTERN void printValues(DATOS *datos);

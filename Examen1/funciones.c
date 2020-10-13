@@ -25,16 +25,36 @@ int readFile(float array[])
         printf("No se pudo abrir el archivo\n");
         exit(0);
     }
+    printf("1.1\n");
     while(fscanf(file,"%f\n",&array[i]))//scanning every value
     {
+        printf("1.1.%d\n",i);
         i++;
     }
     cont=i;
+    printf("1.2\n");
     for(i=cont;i<100;i++)//putting 0 in empty array, avoiding array trash
     {
         array[i]=0;
     }
+    printf("1.3\n");
     fclose(file);
+    return cont;
+}
+int llenarArray(float array[])
+{
+    int cont=11;
+    array[0]=5;
+    array[1]=1;
+    array[2]=6;
+    array[3]=9;
+    array[4]=5;
+    array[5]=1;
+    array[6]=4;
+    array[7]=6;
+    array[8]=1;
+    array[9]=7;
+    array[10]=4.5;
     return cont;
 }
 void orderArray(float *a,int n)
@@ -165,8 +185,16 @@ void fillFile(float array[],DATOS *datos)
         suma=array[i];
     }
     file=fopen("data_statistic.csv","w");
-    for(i=0;i<datos->cant;i++)
+    for(i=0;i<cant;i++)
     {
-        fprintf(file,"%d, %f\n",);
+        fprintf(file,"%d, %f\n",i+1,prom);
     }
+    
+    fclose(file);
+    file=fopen("data_statistic.csv","r");
+    while(fscanf(file,"%d, %f\n",&i,&prom))
+    {
+        printf("%d, %f\n",i,prom);
+    }
+    fclose(file);
 }

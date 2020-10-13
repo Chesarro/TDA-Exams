@@ -20,13 +20,21 @@ int main(void)
     FILE *gnu_socket;
     DATOS datos;
     float array[100];
-    datos.cant=readFile(&array);
-    orderArray(&array,datos.cant);
-    calculate(&datos,&array);
+    printf("1\n");
+    /*datos.cant=readFile(array);*/
+    datos.cant=llenarArray(array);
+    printf("2\n");
+    orderArray(array,datos.cant);
+    printf("3\n");
+    calculate(&datos,array);
+    printf("4\n");
     printValues(&datos);
+    printf("5\n");
     fillFile(array,&datos);
+    printf("6\n");
     char *nombre="data_statistic";
     gnu_socket=popen("gnuplot -persist","w");
     fprintf(gnu_socket,"plot \"%s.csv\" using 1:2 with lines\n",nombre);/*Command for calling gnuplot internally*/
     pclose(gnu_socket);
+    printf("7\n");
 }
