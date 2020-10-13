@@ -22,7 +22,7 @@ int main (void){
   float x; //ayudante para lectura de file
 
   //estadisticos
-  float media, mediana, moda, desviacion, rango, intercuartil;
+  float media1, mediana1, moda1, desviacion1, rango1, intercuartil1;
   float array2[100]; //arreglo ordenado;
 
   //Leer datos
@@ -33,21 +33,22 @@ int main (void){
       array1[i] = x;
       i++;
     }
-    n = i;
     fclose (fp);
   }
 
   //Aqui se ordena el arreglo
   //array2 = array1 ordenado
+
+  n = sizeof(array2)/sizeof(array2[0]);
   
   //Medidas de tendencia central
-  media = media (array2, n);
-  mediana = mediana (array2, n);
-  moda = moda (array2, n);
+  media1 = media (array2, n);
+  mediana1 = mediana (array2, n);
+  moda1 = moda (array2, n);
   //Medidas de dispersion
-  desviacion = desviacion (array2, n);
-  rango = rango (array2, n);
-  intercuartil = intercuartil (array2, n);
+  desviacion1 = desviacion (array2, n);
+  rango1 = rango (array2, n);
+  intercuartil1 = intercuartil (array2, n);
 
   printf("Ancho de clase: ");
   scanf("%d",&ancho_clase);
@@ -55,11 +56,24 @@ int main (void){
   //histograma (array2); 
 
   //Guardar datos
-  //fp = fopen ("data_statistics.csv", "w");
-  //fprintf (informacion de clases del histograma)
-  //fprintf todos los estadisticos
+  fp = fopen ("data_statistics.csv", "w");
+  
+  fprintf(fp, "media: &.2f", media1);
+  fprintf(fp, "mediana: &.2f", mediana1);
+  fprintf(fp, "moda: &.2f", moda1);
+  fprintf(fp, "desviacion: &.2f", desviacion1);
+  fprintf(fp, "rango: &.2f", rango1);
+  fprintf(fp, "distancia intercuaritil: &.2f", intercuartil1);
+  fclose(fp);
+
+  //Segundo archivo, con datos de histograma, para graficar
+  //fp = fopen ("data_graphics.csv", "w");
+  //fprintf (informacion de clases del histograma);
   //fclose(fp);
 
   //pipe a gnuplot
-}
+  /*pipe = popen("gnuplot -persist");
+  fprintf(pipe, "plot data_graphics.csv with lines");
+  pclose(pipe);
+}*)
   

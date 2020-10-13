@@ -10,7 +10,7 @@
 
 #define dispersion_IMPORT
 
-float desviacion (array2, media, n){
+float desviacion (float array2[], int n){
 
   int i;
   float suma = 0;
@@ -23,14 +23,14 @@ float desviacion (array2, media, n){
   return suma;
 }
     
-float rango (array2, n){
+float rango (float array2[], int n){
 
   float ran;
   ran = array2[n] - array2[0];
   return ran;
 }
 
-float intercuartil (array2, n){
+float intercuartil (float array2[], int n){
 
   //por el momento se regresa la ultima posicion
   return array2[n];

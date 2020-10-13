@@ -16,13 +16,15 @@
 #def EXTERN extern
 #endif
 
-float media (array2, n);
+float suma (float array2[], int n);
+
+float media (float array2[], int n);
 //Funcion que calcula la media y la regresa
       
-float mediana (array2, n);
+float mediana (float array2[], int n);
 //Funcion que calcula la mediana y la regresa
 
-float moda (array2, n);
+float moda (float array2[], int n);
 //Funcion que calcula la moda y la regresa
 
 #undef central_IMPORT

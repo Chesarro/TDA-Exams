@@ -17,13 +17,13 @@
 #def EXTERN extern
 #endif
 
-float desviacion (array2, n);
+float desviacion (float array2[], int n);
 //Funcion que calcula la desviacion y la regresa
       
-float rango (array2, n);
+float rango (float array2[], int n);
 //Funcion que calcula el rango y lo regresa
 
-float intercuartil (array2, n);
+float intercuartil (float array2[], int n);
 //Funcion que calcula la la distanicia intercuartil y la regresa
 
 #undef dispersion_IMPORT

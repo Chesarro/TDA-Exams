@@ -6,23 +6,31 @@
 //
 
 #include <stdio.h>
+#include "dispersion.h"
 
 #define central_IMPORT
 
-float media (array2, n){
+float suma (float array2[], int n){
 
   int i;
-  float suma= 0;
+  float suma = 0;
 
   for (i = 0; i< n; i++)
     {
-      suma= suma + array2[i];
+      suma = suma + array2[i];
     }
-  suma = suma / n;
   return suma;
 }
+
+float media (float array2[], int n){
+
+  float media;
+  media = suma (array2, n);
+  media = media /n;
+  return media;
+}
       
-float mediana (array2, n){
+float mediana (float array2[], int n){
 
   int i;
   float med;
@@ -36,9 +44,9 @@ float mediana (array2, n){
   return med;
 }
 
-float moda (array2, n){
+float moda (float array2[], int n){
 
   //por el momento regresaremos el dato en la posicion n/2
-  return array[n/2];
+  return array2[n/2];
 }
   
