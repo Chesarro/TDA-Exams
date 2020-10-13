@@ -122,6 +122,82 @@ float calculate_mode(float *array, int data_number) {
 }
 
 
+/*
+ *
+ * The function calculate_standard_deviation()
+ *
+ * @params
+ *      
+            
+        
+ * @returns
+        
+*/
+
+float calculate_standard_deviation(float *array, int data_number, float mean) {
+    float standard_deviation = 0, total = 0;
+
+    for(int index = 0; index < data_number; index++) {
+        total += array[index];
+    }
+
+    standard_deviation = sqrt( (pow(total - mean, 2)) / data_number);
+
+    return standard_deviation;
+}
+
+
+/*
+ *
+ * The function calculate_range()
+ *
+ * @params
+ *      
+            
+        
+ * @returns
+        
+*/
+
+float calculate_range(float *array, int data_number) {
+    float range = 0, min_value = 0, max_value = 0;
+    
+    for(int index = 0; index < data_number; index++) {
+		if(array[index] > max_value) {
+            max_value = array[index];
+        }
+		else{
+			if(array[index] < min_value) {
+                min_value = array[index];
+            }
+		}
+	}
+
+    range = max_value - min_value;
+
+    return range;
+}
+
+
+/*
+ *
+ * The function calculate_i_distance()
+ *
+ * @params
+ *      
+            
+        
+ * @returns
+        
+*/
+
+float calculate_i_distance(float *array, int data_number) {
+    float interquartile_distance = 0;
+
+
+    return interquartile_distance;
+}
+
 
 /*
  *

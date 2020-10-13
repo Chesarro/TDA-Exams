@@ -14,6 +14,7 @@
 */
 
 #include <stdio.h>
+#include <math.h>
 
 /*
 * Application specific headers required by the following declarations
@@ -82,6 +83,50 @@ EXTERN float calculate_median(float *array, int data_number);
 */
 
 EXTERN float calculate_mode(float *array, int data_number);
+
+
+/*
+ *
+ * The function calculate_standard_deviation()
+ *
+ * @params
+ *      
+            
+        
+ * @returns
+        
+*/
+
+EXTERN float calculate_standard_deviation(float *array, int data_number, float mean);
+
+
+/*
+ *
+ * The function calculate_range()
+ *
+ * @params
+ *      
+            
+        
+ * @returns
+        
+*/
+
+EXTERN float calculate_range(float *array, int data_number);
+
+/*
+ *
+ * The function calculate_i_distance()
+ *
+ * @params
+ *      
+            
+        
+ * @returns
+        
+*/
+
+EXTERN float calculate_i_distance(float *array, int data_number);
 
 
 /*
