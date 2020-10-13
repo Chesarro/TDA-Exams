@@ -2,7 +2,7 @@
 //  pipes.c
 //
 //
-//  Created by Mauricio de Garay, Bernardo García and Fernando Tapia on 29/09/2020.
+//  Created by Mauricio de Garay on 29/09/2020.
 //
 #include <stdio.h>
 #include <stdlib.h>

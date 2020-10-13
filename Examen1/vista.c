@@ -44,6 +44,7 @@ void vistaSolicitarDatos(char NombreArchivo[])
             return;
             break;
             case '2':
+            exit(100);
             break;
             default:
             printf("Error: Opcion invalida\n");
