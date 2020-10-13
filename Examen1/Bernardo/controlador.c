@@ -39,6 +39,9 @@ void controlador(){
   dist=distancia(arreglo, size);
   FILE *info=pipesWriteNewFile("data_statistic.txt");
   pipesWrite(info, med, mod, medi, desvi, min, max, dist);
+  for(int j=0; j<size; j++){
+    printf("%.2f\n", arreglo[j]);
+    }
   cast(arreglo, size);
   pipesCloseFile(info);
   FILE *especial=pipesWriteNewFile("data_plot.csv");
