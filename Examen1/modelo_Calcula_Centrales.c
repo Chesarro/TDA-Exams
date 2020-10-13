@@ -25,4 +25,8 @@ void modelo_Calcula_Centrales(float * array, int * tamano)
   printf("Media = %f\n",media);
   printf("Mediana = %f\n",mediana);
 
+
+  //Se manda un uno en el valor de la moda ya que no hubi tiempo de calcular la moda.
+  modelo_Crea_Archivo(media,mediana,1);
+
 }

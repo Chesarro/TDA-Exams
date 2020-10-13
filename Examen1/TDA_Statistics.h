@@ -129,6 +129,27 @@ EXTERN float * modelo_Lee_Archivo(FILE * Archivo, int * dimension);
 EXTERN void modelo_Calcula_Centrales(float * array, int * dimension);
 
 
+/*
+ *
+ * La funcion modelo_Crea_Archivo crea un archivo .csv con los datos obtenidos de los calculos
+ *
+ * @params
+ *     media (float ):
+            Valor de la media calculada
+ *     mediana (float )
+            Valor de la mediana calculada
+ *     moda (float )  
+            valor de la moda calculado
+
+ * @returns
+        void
+*/
+
+EXTERN void modelo_Crea_Archivo(float media, float mediana, float moda);
+
+
+
+
 #undef TDA_Statistics_IMPORT
 #undef EXTERN
 
