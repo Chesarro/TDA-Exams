@@ -28,6 +28,7 @@ void controlador_Principal()
     Validacion=FALSE;
     do
     {
+        nombreArch[0]=0;
         vistaSolicitarDatos(nombreArch);
         strcat(nombreArch, ".csv");
         Validacion=pipesDoesFileExist(nombreArch);

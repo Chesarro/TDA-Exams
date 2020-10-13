@@ -37,6 +37,20 @@ void modeloPrincipal(char NombreArchivo[])
     free(Datos);
     free(DatosHistograma);
 }
+/* Function prototypes. */
+
+
+/*
+* La función modeloLeerDatosArchivo  se encarga de Leer los datos del archivo y retornarlos como array.
+*
+*
+* @params
+    NombreArchivo: el nombre del archivo donde están los datos
+*
+* @returns
+      
+
+*/
 DatosCSV* modeloLeerDatosArchivo(char NombreArchivo[])
 {
     FILE *Archivo;
@@ -46,6 +60,20 @@ DatosCSV* modeloLeerDatosArchivo(char NombreArchivo[])
     fclose(Archivo);
     return Datos;
 }
+/* Function prototypes. */
+
+
+/*
+* La función modeloObtenerDatosHistograma de hacer los cálculos estadísticos.
+*
+*
+* @params
+    NombreArchivo: el nombre del archivo donde están los datos
+*
+* @returns
+      
+
+*/
 DatosCSV* modeloObtenerDatosHistograma(DatosCSV DatosOrigen[])
 {
     float Media, Mediana, Moda, std, min, max, intercuartil;
